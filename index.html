@@ -1,41 +1,41 @@
-!DOCTYPE html
-html lang=it
-head
-    meta charset=UTF-8
-    meta name=viewport content=width=device-width, initial-scale=1.0
-    titleEnciclopedia Tarocchititle
-    link rel=stylesheet href=style.css
-    link rel=manifest href=manifest.json
-head
-body
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enciclopedia Tarocchi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
 
-    header
-        h1I Tarocchih1
-        input type=text id=search placeholder=Cerca una carta... onkeyup=filterCards()
-    header
+    <header>
+        <h1>I Tarocchi</h1>
+        <input type="text" id="search" placeholder="Cerca una carta..." onkeyup="filterCards()">
+    </header>
 
-    main id=card-container
-        div class=card
-            h2Il Matto (0)h2
-            pstrongSignificatostrong Inizio, innocenza, spontaneità.p
-        div
+    <main id="card-container">
+        <div class="card">
+            <h2>Il Matto (0)</h2>
+            <p><strong>Significato:</strong> Inizio, innocenza, spontaneità.</p>
+        </div>
 
-        div class=card
-            h2Il Bagatto (I)h2
-            pstrongSignificatostrong Manifestazione, intraprendenza, abilità.p
-        div
-    main
+        <div class="card">
+            <h2>Il Bagatto (I)</h2>
+            <p><strong>Significato:</strong> Manifestazione, intraprendenza, abilità.</p>
+        </div>
+    </main>
 
-    script
+    <script>
         function filterCards() {
             let input = document.getElementById('search').value.toLowerCase();
             let cards = document.getElementsByClassName('card');
             
-            for (let i = 0; i  cards.length; i++) {
+            for (let i = 0; i < cards.length; i++) {
                 let title = cards[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
-                cards[i].style.display = title.includes(input)    none;
+                cards[i].style.display = title.includes(input) ? "" : "none";
             }
         }
-    script
-body
-html
+    </script>
+</body>
+</html>
