@@ -1,35 +1,352 @@
+/* --- VARIABILI NOCTURNA --- */
+:root {
+    --bg-black: #050505;
+    --blood-red: #8b0000;
+    --bright-red: #ff1a1a;
+    --gold: #d4af37;
+    --dark-pergamena: #1a0f0f;
+    --text-gold-soft: #f0e68c;
+}
+
+/* --- BASE --- */
 body {
-    font-family: sans-serif;
-    background-color: #1a1a1a;
-    color: #e0e0e0;
+    background-color: var(--bg-black);
+    background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+    color: #dcdcdc;
+    font-family: 'Patrick Hand SC', cursive;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* --- MENU CATEGORIE (IN ALTO) --- */
+.category-menu {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px 10px;
+    background: linear-gradient(to bottom, #150000, transparent);
+    border-bottom: 1px solid var(--blood-red);
+    gap: 20px;
+    scrollbar-width: none;
+}
+
+.category-menu::-webkit-scrollbar { display: none; }
+
+.nav-item {
+    text-align: center;
+    min-width: 70px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.nav-item.active {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px var(--bright-red));
+}
+
+.nav-item .icon { font-size: 1.8rem; display: block; margin-bottom: 5px; }
+
+.nav-item span {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.65rem;
+    color: var(--gold);
+    text-transform: uppercase;
 }
 
 header {
     position: sticky;
     top: 0;
-    background: #1a1a1a;
-    padding-bottom: 20px;
+    z-index: 1000;
+    background-color: var(--bg-black);
 }
 
-input {
+/* --- GRIGLIA CARTE --- */
+.card-grid {
+    display: grid;
+    /* auto-fill crea quante più colonne possibile da 120px */
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
+    gap: 15px; /* Spazio tra le carte, riducilo se le vuoi ancora più vicine */
+    padding: 20px;
+    justify-items: center; /* Centra la carta nella sua colonna */
+}
+
+.card-item {
+    width: 100%; /* La carta occupa tutto lo spazio dei 120px definiti sopra */
+    max-width: 120px;
+    margin: 0; /* Rimuoviamo i margini vecchi che creavano spazio vuoto */
+    cursor: pointer;
+}
+
+.card-item img {
+    width: 100%; /* L'immagine riempie i 120px del contenitore */
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid var(--gold);
+}
+
+.card-item:hover {
+    transform: scale(1.1) translateY(-5px);
+    z-index: 10;
+}
+
+.card-label {
+    font-size: 0.9rem;
+    margin-top: 8px;
+    color: var(--gold);
+}
+
+/* --- IL POP-UP (MODAL) --- */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 10px;
-    border-radius: 8px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center;     /* Centra verticalmente */
+}
+
+/* Contenitore flessibile per affiancare carta e testo */
+.modal-content {
+    background: transparent;
     border: none;
-    font-size: 16px;
+    box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    /* align-items: flex-start è fondamentale per non far allungare il box grigio vuoto in basso */
+    align-items: flex-start; 
+    gap: 20px;
+    filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.8)) drop-shadow(0 0 30px rgba(150, 0, 0, 0.4));
+    max-width: 900px;
+    width: 95%;
+    animation: bloodPulse 3s infinite alternate;
+    height: auto;
+    position: relative; /* Per posizionare la X rispetto al contenuto */
 }
 
-.card {
-    background: #2a2a2a;
-    padding: 15px;
+.modal-text {
+    background: var(--bg-black);
+    border: 1px solid var(--blood-red);
+    padding: 25px;
+    position: relative;
+    /* height: auto assicura che il box finisca dove finisce il testo */
+    height: auto; 
+    flex: 1; /* Permette al testo di prendersi lo spazio accanto alla carta */
+}
+
+/* --- FIX SPECIFICO PER MOBILE --- */
+@media (max-width: 600px) {
+    .modal-content {
+        flex-direction: column; /* Incolla l'immagine SOPRA il testo */
+        align-items: center;    /* Centra l'immagine e il box testo */
+        gap: 10px;
+        margin-top: 50px;       /* Crea spazio per la X in alto */
+        width: 90%;
+    }
+
+    .modal-text {
+        width: 100%;            /* Il box testo occupa tutta la larghezza */
+        box-sizing: border-box; /* Evita che il padding crei scroll orizzontale */
+        padding: 20px;
+        text-align: center;     /* Opzionale: centra il testo per estetica mobile */
+    }
+
+    .modal-image-container {
+        max-width: 150px;       /* Impedisce alla carta di essere enorme su mobile */
+    }
+
+    .close-btn {
+        position: fixed;        /* La X non si muove anche se scendi col testo */
+        top: 20px;
+        right: 20px;
+        z-index: 3000;
+    }
+}
+
+@keyframes bloodPulse {
+    from { filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.6)); }
+    to { filter: drop-shadow(0 0 25px rgba(255, 0, 0, 0.9)); }
+}
+
+/* La carta che "esce" fuori a sinistra */
+.modal-image-container {    
+    flex: 0 0 200px; /* Blocca la larghezza della carta a 200px nel pop-up */
+    max-width: 200px;
+    z-index: 5;
+    transform: rotate(-8deg) translateX(15px);
+    filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.9));
+    pointer-events: none; /* Impedisce che la carta blocchi i click sul testo */
+}
+
+.modal-image-container img {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--gold);
+    display: block; /* Toglie spazi vuoti sotto l'immagine */
+    background: var(--bg-black);
+    /* L'ombra rossa ora "uscirà" dai bordi di questa immagine */
+}
+
+/* IL BOX CON LA CORNICE A DRAGONE */
+.modal-text {
+    .modal-text {
+    flex: 1.2;
+    /* Sfondo nero semi-trasparente (0.9) per non sembrare un blocco finto */
+    background: rgba(15, 15, 15, 0.9) !important; 
+    
+    border: 30px solid transparent;
+    border-image-source: url('https://static.vecteezy.com/system/resources/thumbnails/039/242/569/small/dragon-border-frame-transparent-background-free-png.png');
+    border-image-slice: 100;
+    border-image-repeat: stretch;
+    
+    padding: 20px 30px 20px 50px;
+    margin-left: -60px; /* Ok su desktop */
+    z-index: 1;
+    position: relative;
+    box-shadow: inset 0 0 50px #1a0000;
+    
+    height: auto;
+    align-self: flex-start;
+    max-height: 80vh;
+    overflow-y: auto; /* Scroll verticale solo se serve */
+    overflow-x: hidden; /* ELIMINA LA BARRA ORIZZONTALE */
+    display: flex;
+    flex-direction: column;
+}
+}
+
+/* LA X - POSIZIONATA SULLA CORNICE */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 999; /* Sopra a tutto */
+    font-size: 24px;
+    color: var(--blood-red);
+    cursor: pointer;
+    background: rgba(0,0,0,0.8);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--blood-red);
+    font-family: 'Cinzel', serif;
+}
+
+/* Titolo della carta ORA DENTRO il riquadro */
+.modal-header h2 {
+    font-family: 'Bonheur Royale', cursive;
+    color: var(--gold);
+    font-size: 3.5rem;
+    margin: 0 0 10px 0;
+    text-align: center;
+    line-height: 1;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+/* Testi significati */
+.modal-text p {
+    font-family: 'Patrick Hand SC', cursive;
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    margin: 8px 0;
+    line-height: 1.6; /* Aumenta lo spazio tra le righe per non affaticare l'occhio */
     margin-bottom: 15px;
-    border-radius: 12px;
-    border-left: 5px solid #d4af37; /* Oro */
 }
 
-h2 {
-    margin-top: 0;
-    color: #d4af37;
+.label-red {
+    color: var(--blood-red);
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block; /* Mantiene lo stile dell'immagine */
+    font-weight: bold;
+    color: var(--blood-red);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block; /* Mette l'etichetta sopra il testo per ordine */
+    margin-bottom: 5px;
+}
+
+#uprightText, #reversedText {
+    color: #ddd; /* Un grigio chiaro per il testo secondario */
+    font-style: italic;
+}
+
+/* Adattamento per schermi piccoli (Verticale) */
+@media (max-width: 600px) {
+    .modal-content {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        width: 95%;
+        gap: 0;
+    }
+
+    .modal-text {
+        margin-left: 0 !important; /* Fix fondamentale per la barra */
+        width: 100% !important;
+        border-width: 20px; /* Cornice più piccola */
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .modal-image-container {
+        width: 150px;
+        margin-bottom: -15px;
+        z-index: 2;
+    }
+
+    .close-btn {
+        /* Resta visibile nell'angolo in alto del modal */
+        top: -45px; 
+        right: 0;
+    }
+}
+
+.sep {
+    border: 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    margin: 15px 0;
+}
+
+.advice-block h3 {
+    font-family: 'Bonheur Royale', cursive;
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin: 0;
+    text-align: center;
+}
+
+.advice-block p {
+    font-style: italic;
+    text-align: center;
+    color: #fff;
+}
+
+/* --- TASTO CHIUDI (CERCHIO CON X) --- */
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 35px;
+    height: 35px;
+    background: var(--blood-red);
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
 }
