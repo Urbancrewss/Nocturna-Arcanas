@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="it">
   <head>
+    <!-- Icona per la scheda del Browser (PC) -->
+    <link rel="icon" type="image/png" href="icons/icon-192x192.png">
+    <!-- Icona specifica per iPhone (Apple Touch Icon) -->
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <!-- Il collegamento al manifest -->
     <link rel="manifest" href="manifest.json">
     <!-- Ottimizzazione per iPhone -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Nocturna Arcanas: Encyclopedia</title>
+    <title>Tarot Nocturna: Encyclopedia</title>
     <!-- Import Font -->
     <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Patrick+Hand+SC&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -15,7 +20,7 @@
   <body>
     <div class="app-container">
       <header>
-        <h1 class="glow">Nocturna Arcanas <span>Encyclopedia</span>
+        <h1 class="glow">Nocturna Arcana <span>Encyclopedia</span>
         </h1>
         <nav class="category-menu">
           <div class="nav-item active" onclick="filterCategory('all')">
@@ -582,10 +587,10 @@
           const imgUrl = getCardImageUrl(card.id);
           div.innerHTML = `
             
-												<img src="${imgUrl}" 
+														<img src="${imgUrl}" 
                  alt="${card.name}" 
                  onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/d/db/Tarot_back.jpg';">
-													<div class="card-label">${card.name}</div>
+															<div class="card-label">${card.name}</div>
         `;
           grid.appendChild(div);
         });
