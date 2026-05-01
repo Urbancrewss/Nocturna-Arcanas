@@ -1,7 +1,7 @@
 {
-  "name": "Grimorio Tarocchi",
-  "short_name": "Tarocchi",
-  "description": "Lettura degli Arcani con estetica dark fantasy.",
+  "name": "Nocturna Arcanas",
+  "short_name": "Nocturna",
+  "description": "Tarot Encyclopedia",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#000000",
