@@ -2,9 +2,9 @@
 <html lang="it">
   <head>
     <link rel="manifest" href="manifest.json">
-<!-- Ottimizzazione per iPhone -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">    
+    <!-- Ottimizzazione per iPhone -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Tarot Nocturna: Encyclopedia</title>
@@ -18,25 +18,31 @@
         <h1 class="glow">Tarot Nocturna: <span>Encyclopedia</span>
         </h1>
         <nav class="category-menu">
-    <div class="nav-item active" onclick="filterCategory('all')">
-        <div class="icon">🎴</div><span>All</span>
-    </div>
-    <div class="nav-item" onclick="filterCategory('major')">
-        <div class="icon">👤</div><span>major</span>
-    </div>
-    <div class="nav-item" onclick="filterCategory('wands')">
-        <div class="icon">🪄</div><span>Wands</span>
-    </div>
-    <div class="nav-item" onclick="filterCategory('cups')">
-        <div class="icon">🍷</div><span>Cups</span>
-    </div>
-    <div class="nav-item" onclick="filterCategory('swords')">
-        <div class="icon">⚔️</div><span>Swords</span>
-    </div>
-    <div class="nav-item" onclick="filterCategory('pentacles')">
-        <div class="icon">⭐</div><span>Coins</span>
-    </div>
-</nav>
+          <div class="nav-item active" onclick="filterCategory('all')">
+            <div class="icon">🎴</div>
+            <span>All</span>
+          </div>
+          <div class="nav-item" onclick="filterCategory('major')">
+            <div class="icon">👤</div>
+            <span>major</span>
+          </div>
+          <div class="nav-item" onclick="filterCategory('wands')">
+            <div class="icon">🪄</div>
+            <span>Wands</span>
+          </div>
+          <div class="nav-item" onclick="filterCategory('cups')">
+            <div class="icon">🍷</div>
+            <span>Cups</span>
+          </div>
+          <div class="nav-item" onclick="filterCategory('swords')">
+            <div class="icon">⚔️</div>
+            <span>Swords</span>
+          </div>
+          <div class="nav-item" onclick="filterCategory('pentacles')">
+            <div class="icon">⭐</div>
+            <span>Coins</span>
+          </div>
+        </nav>
       </header>
       <main id="cardGrid" class="card-grid">
         <!-- Popolato da JS -->
@@ -77,532 +83,528 @@
       const tarotDeck = [
         // ARCANI MAGGIORI
         // ARCANI MAGGIORI - AGGIORNATI
-{
-    id: "ar00",
-    name: "The Fool",
-    up: "New beginnings, Spontaneity, Faith, Innocence, Pure potential",
-    rev: "Recklessness, Naivety, Risk-taking, Stupidity, Disregard for consequences",
-    advice: "Il salto nel vuoto è l'unico modo per scoprire se sai volare."
-}, {
-    id: "ar01",
-    name: "The Magician",
-    up: "Willpower, Skill, Manifestation, Inspired action, Mastery",
-    rev: "Manipulation, Poor planning, Untapped talents, Illusion, Trickery",
-    advice: "Hai gli strumenti, ma ti manca la volontà. Plasma la tua realtà."
-}, {
-    id: "ar02",
-    name: "The High Priestess",
-    up: "Intuition, Mystery, Subconscious mind, Sacred knowledge, Inner voice",
-    rev: "Secrets revealed, Hidden agendas, Disconnection from intuition, Withdrawal",
-    advice: "La risposta non è nei libri, ma nel silenzio che li separa."
-}, {
-    id: "ar03",
-    name: "The Empress",
-    up: "Abundance, Fertility, Nature, Nurturing, Creativity",
-    rev: "Creative block, Dependence, Smothering, Emptiness, Lack of growth",
-    advice: "Nutri ciò che vuoi veder crescere, ma non soffocarlo."
-}, {
-    id: "ar04",
-    name: "The Emperor",
-    up: "Authority, Structure, Foundation, Control, Discipline",
-    rev: "Tyranny, Rigidity, Coldness, Chaos, Dominance, Lack of discipline",
-    advice: "Il caos è un lusso. Imponi il tuo ordine interiore."
-}, {
-    id: "ar05",
-    name: "The Hierophant",
-    up: "Tradition, Ethics, Spiritual wisdom, Conformity, Education",
-    rev: "Rebellion, Unconventionality, Personal beliefs, Hypocrisy, Dogmatism",
-    advice: "Le catene della saggezza sono a volte bussole nel buio."
-}, {
-    id: "ar06",
-    name: "The Lovers",
-    up: "Love, Choices, Harmony, Relationships, Alignment of values",
-    rev: "Disharmony, Imbalance, Misalignment, One-sidedness, Poor choices",
-    advice: "Ogni scelta è un piccolo sacrificio. Cosa sei disposto a perdere?"
-}, {
-    id: "ar07",
-    name: "The Chariot",
-    up: "Direction, Victory, Willpower, Determination, Success",
-    rev: "Lack of control, Aggression, Self-discipline issues, Obstacles",
-    advice: "Domina le bestie che tirano la tua anima verso direzioni opposte."
-}, {
-    id: "ar08",
-    name: "Strength",
-    up: "Inner Power, Courage, Influence, Compassion, Persuasion",
-    rev: "Self-doubt, Raw emotion, Weakness, Low confidence, Lack of self-control",
-    advice: "La vera forza non ruggisce, ma doma il mostro con un sussurro."
-}, {
-    id: "ar09",
-    name: "The Hermit",
-    up: "Introspection, Solitude, Soul-searching, Inner guidance, Wisdom",
-    rev: "Isolation, Loneliness, Withdrawal, Reclusiveness, Fear of the truth",
-    advice: "L'oscurità è un'ottima compagna per chi vuole vedere davvero."
-}, {
-    id: "ar10",
-    name: "Wheel of Fortune",
-    up: "Change, Luck, Cycles, Destiny, A turning point",
-    rev: "Bad luck, Resistance to change, Breaking cycles, Negative external forces",
-    advice: "La ruota gira. Se sei in alto goditi il panorama, se sei in basso aspetta."
-}, {
-    id: "ar11",
-    name: "Justice",
-    up: "Fairness, Truth, Cause and effect, Law, Accountability",
-    rev: "Injustice, Lack of accountability, Dishonesty, Unfairness",
-    advice: "Ogni azione ha un'ombra. Preparati a rispondere della tua."
-}, {
-    id: "ar12",
-    name: "The Hanged Man",
-    up: "Sacrifice, Perspective, Letting go, New point of view, Pausing",
-    rev: "Stalling, Resistance, Ego, Avoiding sacrifice, Disinterested",
-    advice: "Guardare il mondo al contrario è l'unico modo per vederlo dritto."
-}, {
-    id: "ar13",
-    name: "Death",
-    up: "Endings, Transition, Rebirth, Transformation, Letting go",
-    rev: "Resistance to change, Inability to move on, Stagnation, Decay",
-    advice: "Lascia andare ciò che è già morto, o marcirai insieme a lui."
-}, {
-    id: "ar14",
-    name: "Temperance",
-    up: "Balance, Patience, Purpose, Moderation, Alchemy",
-    rev: "Imbalance, Excess, Lack of vision, Conflict, Disharmony",
-    advice: "Mescola il sangue con l'acqua. Trova l'equilibrio nel tuo veleno."
-}, {
-    id: "ar15",
-    name: "The Devil",
-    up: "Addiction, Shadow self, Attachment, Restriction, Materialism",
-    rev: "Release, Freedom, Detachment, Restoring control, Breaking chains",
-    advice: "Le catene che ami di più sono quelle che ti uccideranno per prime."
-}, {
-    id: "ar16",
-    name: "The Tower",
-    up: "Upheaval, Disaster, Sudden change, Revelation, Awakening",
-    rev: "Avoiding disaster, Delaying the inevitable, Fear of change, Personal crisis",
-    advice: "Ciò che è costruito sulla sabbia merita di crollare. Ricomincia."
-}, {
-    id: "ar17",
-    name: "The Star",
-    up: "Hope, Inspiration, Renewal, Spirituality, Serenity",
-    rev: "Despair, Lack of faith, Disconnection, Discouragement, Uninspired",
-    advice: "C'è una luce sottile anche nel deserto più freddo. Seguila."
-}, {
-    id: "ar18",
-    name: "The Moon",
-    up: "Illusion, Intuition, Fear, Anxiety, Subconscious dreams",
-    rev: "Clarity, Understanding, Release of fear, Unveiling secrets",
-    advice: "La luna mente sempre. Non fidarti dei riflessi nell'acqua."
-}, {
-    id: "ar19",
-    name: "The Sun",
-    up: "Vitality, Success, Joy, Warmth, Positivity, Radiance",
-    rev: "Clouded success, Depression, Lack of enthusiasm, False optimism",
-    advice: "Il sole brucia chi non sa guardarlo. Splendi senza accecare."
-}, {
-    id: "ar20",
-    name: "Judgement",
-    up: "Rebirth, Calling, Absolution, Self-evaluation, Awakening",
-    rev: "Self-judgment, Doubt, Refusal of the call, Guilt, Stagnation",
-    advice: "Il passato bussa. Apri solo se hai i conti in regola."
-}, {
-    id: "ar21",
-    name: "The World",
-    up: "Completion, Travel, Integration, Achievement, Fulfilment",
-    rev: "Lack of closure, Shortcut attempts, Unfinished business, Delays",
-    advice: "Tutto torna al punto di partenza. Il cerchio si è chiuso."
-},
+        {
+          id: "ar00",
+          name: "The Fool",
+          up: "New beginnings, Spontaneity, Faith, Innocence, Pure potential",
+          rev: "Recklessness, Naivety, Risk-taking, Stupidity, Disregard for consequences",
+          advice: "Il salto nel vuoto è l'unico modo per scoprire se sai volare."
+        }, {
+          id: "ar01",
+          name: "The Magician",
+          up: "Willpower, Skill, Manifestation, Inspired action, Mastery",
+          rev: "Manipulation, Poor planning, Untapped talents, Illusion, Trickery",
+          advice: "Hai gli strumenti, ma ti manca la volontà. Plasma la tua realtà."
+        }, {
+          id: "ar02",
+          name: "The High Priestess",
+          up: "Intuition, Mystery, Subconscious mind, Sacred knowledge, Inner voice",
+          rev: "Secrets revealed, Hidden agendas, Disconnection from intuition, Withdrawal",
+          advice: "La risposta non è nei libri, ma nel silenzio che li separa."
+        }, {
+          id: "ar03",
+          name: "The Empress",
+          up: "Abundance, Fertility, Nature, Nurturing, Creativity",
+          rev: "Creative block, Dependence, Smothering, Emptiness, Lack of growth",
+          advice: "Nutri ciò che vuoi veder crescere, ma non soffocarlo."
+        }, {
+          id: "ar04",
+          name: "The Emperor",
+          up: "Authority, Structure, Foundation, Control, Discipline",
+          rev: "Tyranny, Rigidity, Coldness, Chaos, Dominance, Lack of discipline",
+          advice: "Il caos è un lusso. Imponi il tuo ordine interiore."
+        }, {
+          id: "ar05",
+          name: "The Hierophant",
+          up: "Tradition, Ethics, Spiritual wisdom, Conformity, Education",
+          rev: "Rebellion, Unconventionality, Personal beliefs, Hypocrisy, Dogmatism",
+          advice: "Le catene della saggezza sono a volte bussole nel buio."
+        }, {
+          id: "ar06",
+          name: "The Lovers",
+          up: "Love, Choices, Harmony, Relationships, Alignment of values",
+          rev: "Disharmony, Imbalance, Misalignment, One-sidedness, Poor choices",
+          advice: "Ogni scelta è un piccolo sacrificio. Cosa sei disposto a perdere?"
+        }, {
+          id: "ar07",
+          name: "The Chariot",
+          up: "Direction, Victory, Willpower, Determination, Success",
+          rev: "Lack of control, Aggression, Self-discipline issues, Obstacles",
+          advice: "Domina le bestie che tirano la tua anima verso direzioni opposte."
+        }, {
+          id: "ar08",
+          name: "Strength",
+          up: "Inner Power, Courage, Influence, Compassion, Persuasion",
+          rev: "Self-doubt, Raw emotion, Weakness, Low confidence, Lack of self-control",
+          advice: "La vera forza non ruggisce, ma doma il mostro con un sussurro."
+        }, {
+          id: "ar09",
+          name: "The Hermit",
+          up: "Introspection, Solitude, Soul-searching, Inner guidance, Wisdom",
+          rev: "Isolation, Loneliness, Withdrawal, Reclusiveness, Fear of the truth",
+          advice: "L'oscurità è un'ottima compagna per chi vuole vedere davvero."
+        }, {
+          id: "ar10",
+          name: "Wheel of Fortune",
+          up: "Change, Luck, Cycles, Destiny, A turning point",
+          rev: "Bad luck, Resistance to change, Breaking cycles, Negative external forces",
+          advice: "La ruota gira. Se sei in alto goditi il panorama, se sei in basso aspetta."
+        }, {
+          id: "ar11",
+          name: "Justice",
+          up: "Fairness, Truth, Cause and effect, Law, Accountability",
+          rev: "Injustice, Lack of accountability, Dishonesty, Unfairness",
+          advice: "Ogni azione ha un'ombra. Preparati a rispondere della tua."
+        }, {
+          id: "ar12",
+          name: "The Hanged Man",
+          up: "Sacrifice, Perspective, Letting go, New point of view, Pausing",
+          rev: "Stalling, Resistance, Ego, Avoiding sacrifice, Disinterested",
+          advice: "Guardare il mondo al contrario è l'unico modo per vederlo dritto."
+        }, {
+          id: "ar13",
+          name: "Death",
+          up: "Endings, Transition, Rebirth, Transformation, Letting go",
+          rev: "Resistance to change, Inability to move on, Stagnation, Decay",
+          advice: "Lascia andare ciò che è già morto, o marcirai insieme a lui."
+        }, {
+          id: "ar14",
+          name: "Temperance",
+          up: "Balance, Patience, Purpose, Moderation, Alchemy",
+          rev: "Imbalance, Excess, Lack of vision, Conflict, Disharmony",
+          advice: "Mescola il sangue con l'acqua. Trova l'equilibrio nel tuo veleno."
+        }, {
+          id: "ar15",
+          name: "The Devil",
+          up: "Addiction, Shadow self, Attachment, Restriction, Materialism",
+          rev: "Release, Freedom, Detachment, Restoring control, Breaking chains",
+          advice: "Le catene che ami di più sono quelle che ti uccideranno per prime."
+        }, {
+          id: "ar16",
+          name: "The Tower",
+          up: "Upheaval, Disaster, Sudden change, Revelation, Awakening",
+          rev: "Avoiding disaster, Delaying the inevitable, Fear of change, Personal crisis",
+          advice: "Ciò che è costruito sulla sabbia merita di crollare. Ricomincia."
+        }, {
+          id: "ar17",
+          name: "The Star",
+          up: "Hope, Inspiration, Renewal, Spirituality, Serenity",
+          rev: "Despair, Lack of faith, Disconnection, Discouragement, Uninspired",
+          advice: "C'è una luce sottile anche nel deserto più freddo. Seguila."
+        }, {
+          id: "ar18",
+          name: "The Moon",
+          up: "Illusion, Intuition, Fear, Anxiety, Subconscious dreams",
+          rev: "Clarity, Understanding, Release of fear, Unveiling secrets",
+          advice: "La luna mente sempre. Non fidarti dei riflessi nell'acqua."
+        }, {
+          id: "ar19",
+          name: "The Sun",
+          up: "Vitality, Success, Joy, Warmth, Positivity, Radiance",
+          rev: "Clouded success, Depression, Lack of enthusiasm, False optimism",
+          advice: "Il sole brucia chi non sa guardarlo. Splendi senza accecare."
+        }, {
+          id: "ar20",
+          name: "Judgement",
+          up: "Rebirth, Calling, Absolution, Self-evaluation, Awakening",
+          rev: "Self-judgment, Doubt, Refusal of the call, Guilt, Stagnation",
+          advice: "Il passato bussa. Apri solo se hai i conti in regola."
+        }, {
+          id: "ar21",
+          name: "The World",
+          up: "Completion, Travel, Integration, Achievement, Fulfilment",
+          rev: "Lack of closure, Shortcut attempts, Unfinished business, Delays",
+          advice: "Tutto torna al punto di partenza. Il cerchio si è chiuso."
+        },
         // SEME DI BASTONI
         // SEME DI BASTONI - AGGIORNATI
-{
-  id: "waac",
-  name: "Ace of Wands",
-  up: "Inspiration, New Opportunities, Growth, Potential, Creative Spark",
-  rev: "Lack of energy, Creative block, Distraction, Delays, Lack of direction",
-  advice: "Una scintilla ha toccato il legno secco. Soffia sul fuoco prima che si spenga."
-}, {
-  id: "wa02",
-  name: "Two of Wands",
-  up: "Planning, Discovery, Future focus, Decisions, Leaving comfort",
-  rev: "Fear of unknown, Lack of planning, Playing it safe, Disorganization",
-  advice: "Il mondo è nelle tue mani, ma per conquistarlo devi abbandonare la sicurezza del tuo castello."
-}, {
-  id: "wa03",
-  name: "Three of Wands",
-  up: "Expansion, Foresight, Strategy, Progress, Overseas opportunities",
-  rev: "Playing it safe, Lack of foresight, Delays, Frustrated ambition",
-  advice: "Le tue navi sono all'orizzonte. Non restare a riva: prepara il porto per il loro arrivo."
-}, {
-  id: "wa04",
-  name: "Four of Wands",
-  up: "Celebration, Home, Harmony, Relaxation, Homecoming, Stability",
-  rev: "Lack of support, Home conflict, Transition, Unstable foundations",
-  advice: "Costruisci fondamenta solide. La gioia è un fuoco che va protetto dal vento."
-}, {
-  id: "wa05",
-  name: "Five of Wands",
-  up: "Competition, Conflict, Rivalry, Diversity, Mental struggle",
-  rev: "Avoidance, Peace, Inner conflict, Compromise, Ending chaos",
-  advice: "Molte mani cercano di afferrare lo stesso bastone. Dimostra di essere l'unico a saperlo impugnare."
-}, {
-  id: "wa06",
-  name: "Six of Wands",
-  up: "Victory, Success, Public recognition, Confidence, Progress",
-  rev: "Fall from grace, Lack of recognition, Ego, Punishment, Losing",
-  advice: "Cavalca con orgoglio tra la folla, ma ricorda: la corona d'alloro appassisce in fretta."
-}, {
-  id: "wa07",
-  name: "Seven of Wands",
-  up: "Defiance, Defense, Maintaining control, Protection, Resilience",
-  rev: "Giving up, Overwhelmed, Weakness, Losing ground, Yielding",
-  advice: "Sei in cima alla collina e tutti vogliono il tuo posto. Non arretrare di un passo."
-}, {
-  id: "wa08",
-  name: "Eight of Wands",
-  up: "Swiftness, Action, Rapid movement, News, Quick decisions",
-  rev: "Delay, Panic, Waiting, Slowing down, Chaos, Misaligned timing",
-  advice: "Le frecce sono state scoccate. Non puoi fermarle, puoi solo scegliere dove farti trovare quando cadranno."
-}, {
-  id: "wa09",
-  name: "Nine of Wands",
-  up: "Resilience, Persistence, Last stand, Courage, Test of faith",
-  rev: "Exhaustion, Giving up, Defensive walls, Paranoia, Fatigue",
-  advice: "Sei stanco e ferito, ma la battaglia non è finita. Resta in piedi: sei l'ultimo baluardo."
-}, {
-  id: "wa10",
-  name: "Ten of Wands",
-  up: "Burden, Duty, Responsibility, Hard work, Completion",
-  rev: "Burnout, Collapse, Avoiding responsibility, Delegating, Stress",
-  advice: "Stai portando troppi pesi. Se non ne lasci andare qualcuno, crollerai prima della meta."
-}, {
-  id: "wapa",
-  name: "Page of Wands",
-  up: "Adventure, News, Discovery, Potential, Enthusiasm, New ideas",
-  rev: "Bad news, Fear, Lack of direction, Procrastination, Setbacks",
-  advice: "Un'idea brucia dentro di te. Non lasciarla spegnere dal dubbio degli altri."
-}, {
-  id: "wakn",
-  name: "Knight of Wands",
-  up: "Passion, Audacity, Lust, Adventure, Fearlessness",
-  rev: "Impulsiveness, Haste, Recklessness, Short temper, Volatility",
-  advice: "Corri verso il pericolo con il sorriso. La paura è solo combustibile per il tuo fuoco."
-}, {
-  id: "waqu",
-  name: "Queen of Wands",
-  up: "Confidence, Vitality, Determination, Social butterfly, Courage",
-  rev: "Jealousy, Vengeful, Insecurity, Self-centeredness, Temper",
-  advice: "Il tuo calore attrae e brucia allo stesso tempo. Regna con il sole che hai dentro."
-}, {
-  id: "waki",
-  name: "King of Wands",
-  up: "Leadership, Vision, Entrepreneur, Honour, Originality",
-  rev: "Impulsiveness, Tyrant, High expectations, Ruthlessness, Ego",
-  advice: "Il vero leader non segue la via, la illumina con il proprio spirito."
-},
+        {
+          id: "waac",
+          name: "Ace of Wands",
+          up: "Inspiration, New Opportunities, Growth, Potential, Creative Spark",
+          rev: "Lack of energy, Creative block, Distraction, Delays, Lack of direction",
+          advice: "Una scintilla ha toccato il legno secco. Soffia sul fuoco prima che si spenga."
+        }, {
+          id: "wa02",
+          name: "Two of Wands",
+          up: "Planning, Discovery, Future focus, Decisions, Leaving comfort",
+          rev: "Fear of unknown, Lack of planning, Playing it safe, Disorganization",
+          advice: "Il mondo è nelle tue mani, ma per conquistarlo devi abbandonare la sicurezza del tuo castello."
+        }, {
+          id: "wa03",
+          name: "Three of Wands",
+          up: "Expansion, Foresight, Strategy, Progress, Overseas opportunities",
+          rev: "Playing it safe, Lack of foresight, Delays, Frustrated ambition",
+          advice: "Le tue navi sono all'orizzonte. Non restare a riva: prepara il porto per il loro arrivo."
+        }, {
+          id: "wa04",
+          name: "Four of Wands",
+          up: "Celebration, Home, Harmony, Relaxation, Homecoming, Stability",
+          rev: "Lack of support, Home conflict, Transition, Unstable foundations",
+          advice: "Costruisci fondamenta solide. La gioia è un fuoco che va protetto dal vento."
+        }, {
+          id: "wa05",
+          name: "Five of Wands",
+          up: "Competition, Conflict, Rivalry, Diversity, Mental struggle",
+          rev: "Avoidance, Peace, Inner conflict, Compromise, Ending chaos",
+          advice: "Molte mani cercano di afferrare lo stesso bastone. Dimostra di essere l'unico a saperlo impugnare."
+        }, {
+          id: "wa06",
+          name: "Six of Wands",
+          up: "Victory, Success, Public recognition, Confidence, Progress",
+          rev: "Fall from grace, Lack of recognition, Ego, Punishment, Losing",
+          advice: "Cavalca con orgoglio tra la folla, ma ricorda: la corona d'alloro appassisce in fretta."
+        }, {
+          id: "wa07",
+          name: "Seven of Wands",
+          up: "Defiance, Defense, Maintaining control, Protection, Resilience",
+          rev: "Giving up, Overwhelmed, Weakness, Losing ground, Yielding",
+          advice: "Sei in cima alla collina e tutti vogliono il tuo posto. Non arretrare di un passo."
+        }, {
+          id: "wa08",
+          name: "Eight of Wands",
+          up: "Swiftness, Action, Rapid movement, News, Quick decisions",
+          rev: "Delay, Panic, Waiting, Slowing down, Chaos, Misaligned timing",
+          advice: "Le frecce sono state scoccate. Non puoi fermarle, puoi solo scegliere dove farti trovare quando cadranno."
+        }, {
+          id: "wa09",
+          name: "Nine of Wands",
+          up: "Resilience, Persistence, Last stand, Courage, Test of faith",
+          rev: "Exhaustion, Giving up, Defensive walls, Paranoia, Fatigue",
+          advice: "Sei stanco e ferito, ma la battaglia non è finita. Resta in piedi: sei l'ultimo baluardo."
+        }, {
+          id: "wa10",
+          name: "Ten of Wands",
+          up: "Burden, Duty, Responsibility, Hard work, Completion",
+          rev: "Burnout, Collapse, Avoiding responsibility, Delegating, Stress",
+          advice: "Stai portando troppi pesi. Se non ne lasci andare qualcuno, crollerai prima della meta."
+        }, {
+          id: "wapa",
+          name: "Page of Wands",
+          up: "Adventure, News, Discovery, Potential, Enthusiasm, New ideas",
+          rev: "Bad news, Fear, Lack of direction, Procrastination, Setbacks",
+          advice: "Un'idea brucia dentro di te. Non lasciarla spegnere dal dubbio degli altri."
+        }, {
+          id: "wakn",
+          name: "Knight of Wands",
+          up: "Passion, Audacity, Lust, Adventure, Fearlessness",
+          rev: "Impulsiveness, Haste, Recklessness, Short temper, Volatility",
+          advice: "Corri verso il pericolo con il sorriso. La paura è solo combustibile per il tuo fuoco."
+        }, {
+          id: "waqu",
+          name: "Queen of Wands",
+          up: "Confidence, Vitality, Determination, Social butterfly, Courage",
+          rev: "Jealousy, Vengeful, Insecurity, Self-centeredness, Temper",
+          advice: "Il tuo calore attrae e brucia allo stesso tempo. Regna con il sole che hai dentro."
+        }, {
+          id: "waki",
+          name: "King of Wands",
+          up: "Leadership, Vision, Entrepreneur, Honour, Originality",
+          rev: "Impulsiveness, Tyrant, High expectations, Ruthlessness, Ego",
+          advice: "Il vero leader non segue la via, la illumina con il proprio spirito."
+        },
         // SEME DI SPADE
         // SEME DI SPADE - AGGIORNATI
-{
-  id: "swac",
-  name: "Ace of Swords",
-  up: "Breakthrough, Clarity, Sharp Mind, Victory, Intellectual Power",
-  rev: "Confusion, Chaos, Lack of clarity, Miscommunication, Hostility",
-  advice: "La verità è una lama nuda: taglia le illusioni, ma attento a non ferirti."
-}, {
-  id: "sw02",
-  name: "Two of Swords",
-  up: "Stalemate, Difficult decisions, Blindness, Paradox, Weighing options",
-  rev: "Indecision, Information overload, Emotional turmoil, Truth revealed",
-  advice: "Toglie la benda solo chi non teme ciò che vedrà nello specchio."
-}, {
-  id: "sw03",
-  name: "Three of Swords",
-  up: "Heartbreak, Sorrow, Emotional pain, Separation, Grief",
-  rev: "Recovery, Repression, Healing, Releasing pain, Forgiveness",
-  advice: "Il dolore è il prezzo del sangue. Lascialo uscire per non soffocare."
-}, {
-  id: "sw04",
-  name: "Four of Swords",
-  up: "Rest, Meditation, Recovery, Contemplation, Quiet time",
-  rev: "Exhaustion, Burnout, Restlessness, Stagnation, Awakening",
-  advice: "Il riposo non è debolezza, è l'affilatura della tua arma migliore."
-}, {
-  id: "sw05",
-  name: "Five of Swords",
-  up: "Conflict, Defeat, Win at all costs, Betrayal, Sneakiness",
-  rev: "Resentment, Reconciliation, Lingering conflict, Compromise, Regret",
-  advice: "Hai vinto la battaglia, ma guarda le tue mani: sono ancora pulite?"
-}, {
-  id: "sw06",
-  name: "Six of Swords",
-  up: "Transition, Departure, Leaving behind, Mental relief, Moving on",
-  rev: "Stuck, Emotional baggage, Resistance to change, Unfinished business",
-  advice: "Stai remando verso acque calme. Non voltarti a guardare la riva che brucia."
-}, {
-  id: "sw07",
-  name: "Seven of Swords",
-  up: "Deception, Strategy, Sneakiness, Resourcefulness, Independence",
-  rev: "Confession, Trap, Caught out, Turning over a new leaf, Responsibility",
-  advice: "Non tutto ciò che prendi nell'ombra ti appartiene. Il peso del furto ti rallenta."
-}, {
-  id: "sw08",
-  name: "Eight of Swords",
-  up: "Imprisonment, Victimhood, Self-imposed restriction, Feeling trapped",
-  rev: "Freedom, Release, New perspective, Taking control, Self-belief",
-  advice: "Le bende sono sciolte e le spade non ti toccano. Cammina."
-}, {
-  id: "sw09",
-  name: "Nine of Swords",
-  up: "Anxiety, Nightmares, Fear, Guilt, Mental anguish, Insomnia",
-  rev: "Hope, Recovery, Facing fears, Finding help, Ending the nightmare",
-  advice: "I tuoi spettri hanno potere solo se nutri la loro ombra col tuo terrore."
-}, {
-  id: "sw10",
-  name: "Ten of Swords",
-  up: "Betrayal, Rock bottom, Ruin, Finality, Backstabbing",
-  rev: "Recovery, Resistance, Picking up the pieces, Avoiding ruin, New start",
-  advice: "Peggio di così non può andare. Ora puoi solo rialzarti tra le macerie."
-}, {
-  id: "swpa",
-  name: "Page of Swords",
-  up: "Curiosity, Vigilance, Mental agility, New ideas, Communication",
-  rev: "Deception, Gossip, All talk no action, Slander, Impoliteness",
-  advice: "Usa la mente come uno scudo e la lingua come un fioretto."
-}, {
-  id: "swkn",
-  name: "Knight of Swords",
-  up: "Action, Ambition, Rapid change, Determination, Directness",
-  rev: "Impulsiveness, Chaos, Disregard for consequences, Burnout, Aggression",
-  advice: "Carica pure, ma assicurati che il tuo cuore corra veloce quanto il tuo destriero."
-}, {
-  id: "swqu",
-  name: "Queen of Swords",
-  up: "Intellect, Independence, Sharp wit, Boundaries, Direct communication",
-  rev: "Coldness, Bitter, Overly emotional, Cruel, Harsh judgment",
-  advice: "La tua lucidità è il tuo trono. Non lasciare che le lacrime appannino il tuo giudizio."
-}, {
-  id: "swki",
-  name: "King of Swords",
-  up: "Authority, Truth, Intellectual power, Structure, Logic",
-  rev: "Tyranny, Cruelty, Manipulation, Abusive power, Lack of emotion",
-  advice: "Il re sa che la legge più dura è quella che impone a se stesso."
-},
+        {
+          id: "swac",
+          name: "Ace of Swords",
+          up: "Breakthrough, Clarity, Sharp Mind, Victory, Intellectual Power",
+          rev: "Confusion, Chaos, Lack of clarity, Miscommunication, Hostility",
+          advice: "La verità è una lama nuda: taglia le illusioni, ma attento a non ferirti."
+        }, {
+          id: "sw02",
+          name: "Two of Swords",
+          up: "Stalemate, Difficult decisions, Blindness, Paradox, Weighing options",
+          rev: "Indecision, Information overload, Emotional turmoil, Truth revealed",
+          advice: "Toglie la benda solo chi non teme ciò che vedrà nello specchio."
+        }, {
+          id: "sw03",
+          name: "Three of Swords",
+          up: "Heartbreak, Sorrow, Emotional pain, Separation, Grief",
+          rev: "Recovery, Repression, Healing, Releasing pain, Forgiveness",
+          advice: "Il dolore è il prezzo del sangue. Lascialo uscire per non soffocare."
+        }, {
+          id: "sw04",
+          name: "Four of Swords",
+          up: "Rest, Meditation, Recovery, Contemplation, Quiet time",
+          rev: "Exhaustion, Burnout, Restlessness, Stagnation, Awakening",
+          advice: "Il riposo non è debolezza, è l'affilatura della tua arma migliore."
+        }, {
+          id: "sw05",
+          name: "Five of Swords",
+          up: "Conflict, Defeat, Win at all costs, Betrayal, Sneakiness",
+          rev: "Resentment, Reconciliation, Lingering conflict, Compromise, Regret",
+          advice: "Hai vinto la battaglia, ma guarda le tue mani: sono ancora pulite?"
+        }, {
+          id: "sw06",
+          name: "Six of Swords",
+          up: "Transition, Departure, Leaving behind, Mental relief, Moving on",
+          rev: "Stuck, Emotional baggage, Resistance to change, Unfinished business",
+          advice: "Stai remando verso acque calme. Non voltarti a guardare la riva che brucia."
+        }, {
+          id: "sw07",
+          name: "Seven of Swords",
+          up: "Deception, Strategy, Sneakiness, Resourcefulness, Independence",
+          rev: "Confession, Trap, Caught out, Turning over a new leaf, Responsibility",
+          advice: "Non tutto ciò che prendi nell'ombra ti appartiene. Il peso del furto ti rallenta."
+        }, {
+          id: "sw08",
+          name: "Eight of Swords",
+          up: "Imprisonment, Victimhood, Self-imposed restriction, Feeling trapped",
+          rev: "Freedom, Release, New perspective, Taking control, Self-belief",
+          advice: "Le bende sono sciolte e le spade non ti toccano. Cammina."
+        }, {
+          id: "sw09",
+          name: "Nine of Swords",
+          up: "Anxiety, Nightmares, Fear, Guilt, Mental anguish, Insomnia",
+          rev: "Hope, Recovery, Facing fears, Finding help, Ending the nightmare",
+          advice: "I tuoi spettri hanno potere solo se nutri la loro ombra col tuo terrore."
+        }, {
+          id: "sw10",
+          name: "Ten of Swords",
+          up: "Betrayal, Rock bottom, Ruin, Finality, Backstabbing",
+          rev: "Recovery, Resistance, Picking up the pieces, Avoiding ruin, New start",
+          advice: "Peggio di così non può andare. Ora puoi solo rialzarti tra le macerie."
+        }, {
+          id: "swpa",
+          name: "Page of Swords",
+          up: "Curiosity, Vigilance, Mental agility, New ideas, Communication",
+          rev: "Deception, Gossip, All talk no action, Slander, Impoliteness",
+          advice: "Usa la mente come uno scudo e la lingua come un fioretto."
+        }, {
+          id: "swkn",
+          name: "Knight of Swords",
+          up: "Action, Ambition, Rapid change, Determination, Directness",
+          rev: "Impulsiveness, Chaos, Disregard for consequences, Burnout, Aggression",
+          advice: "Carica pure, ma assicurati che il tuo cuore corra veloce quanto il tuo destriero."
+        }, {
+          id: "swqu",
+          name: "Queen of Swords",
+          up: "Intellect, Independence, Sharp wit, Boundaries, Direct communication",
+          rev: "Coldness, Bitter, Overly emotional, Cruel, Harsh judgment",
+          advice: "La tua lucidità è il tuo trono. Non lasciare che le lacrime appannino il tuo giudizio."
+        }, {
+          id: "swki",
+          name: "King of Swords",
+          up: "Authority, Truth, Intellectual power, Structure, Logic",
+          rev: "Tyranny, Cruelty, Manipulation, Abusive power, Lack of emotion",
+          advice: "Il re sa che la legge più dura è quella che impone a se stesso."
+        },
         // SEME DI COPPE
         // SEME DI COPPE - AGGIORNATI
-{
-  id: "cuac",
-  name: "Ace of Cups",
-  up: "Love, New feelings, Intuition, Spiritual blessing, Creativity",
-  rev: "Empty emotions, Blocked creativity, Repression, Unrequited love",
-  advice: "Il cuore è un calice: lascialo traboccare, ma non affogare nei sentimenti altrui."
-}, {
-  id: "cu02",
-  name: "Two of Cups",
-  up: "Partnership, Attraction, Mutual respect, Connection, Union",
-  rev: "Break-up, Disharmony, Distrust, Imbalance, Misalignment",
-  advice: "Due anime che si specchiano creano una verità nuova. Proteggi questo riflesso."
-}, {
-  id: "cu03",
-  name: "Three of Cups",
-  up: "Celebration, Friendship, Community, Happiness, Collaboration",
-  rev: "Overindulgence, Gossip, Isolation, Group conflict, Excess",
-  advice: "Brinda con chi ha camminato con te nel buio, ma attento a non scordare la strada."
-}, {
-  id: "cu04",
-  name: "Four of Cups",
-  up: "Apathy, Contemplation, Reevaluation, Disconnected, Boredom",
-  rev: "Awareness, New interest, Choosing to act, Retreating from isolation",
-  advice: "Smetti di fissare il calice vuoto; c'è una mano tesa nell'ombra che ti offre di meglio."
-}, {
-  id: "cu05",
-  name: "Five of Cups",
-  up: "Loss, Regret, Disappointment, Mourning, Focusing on the negative",
-  rev: "Moving on, Acceptance, Finding peace, Moving through grief",
-  advice: "Tre coppe sono a terra, ma due sono ancora piene. Non piangere sul sangue versato."
-}, {
-  id: "cu06",
-  name: "Six of Cups",
-  up: "Nostalgia, Childhood, Innocence, Reunion, Sweet memories",
-  rev: "Living in the past, Moving forward, Leaving home, Childhood issues",
-  advice: "Il passato è un profumo dolce, ma se lo respiri troppo a lungo diventa un veleno."
-}, {
-  id: "cu07",
-  name: "Seven of Cups",
-  up: "Choices, Fantasy, Illusion, Wishful thinking, Opportunities",
-  rev: "Alignment, Reality, Overwhelmed by choice, Clarity, Resolution",
-  advice: "Mille sogni brillano nella nebbia. Solo uno ha radici, gli altri sono solo spettri."
-}, {
-  id: "cu08",
-  name: "Eight of Cups",
-  up: "Abandonment, Travel, Seeking truth, Walking away, Disillusionment",
-  rev: "Fear of change, Staying in a bad situation, Aimlessness, Drift",
-  advice: "A volte l'unico modo per salvarsi è voltare le spalle a ciò che hai costruito."
-}, {
-  id: "cu09",
-  name: "Nine of Cups",
-  up: "Satisfaction, Wishes, Contentment, Success, Emotional stability",
-  rev: "Greed, Materialism, Overindulgence, Smugness, Dissatisfaction",
-  advice: "Hai ciò che volevi. Ora chiediti: è il tuo cuore ad essere pieno o solo il tuo stomaco?"
-}, {
-  id: "cu10",
-  name: "Ten of Cups",
-  up: "Harmony, Family, Bliss, Long-term happiness, Emotional fulfilment",
-  rev: "Broken home, Disharmony, Struggling relationships, Misalignment of values",
-  advice: "La vera pace non è l'assenza di tempesta, ma avere un rifugio sicuro dove attenderla."
-}, {
-  id: "cupa",
-  name: "Page of Cups",
-  up: "Creativity, News, Intuition, Curiosity, Emotional possibilities",
-  rev: "Emotional immaturity, Creative block, Doubts, Escapism",
-  advice: "Un messaggio galleggia verso di te. Ascolta ciò che dicono le onde, non la riva."
-}, {
-  id: "cukn",
-  name: "Knight of Cups",
-  up: "Romance, Charm, Imagination, Following the heart, Proposals",
-  rev: "Moodiness, Unrealistic, Heartbreak, Disappointment, Overactive imagination",
-  advice: "Cavalca sull'acqua dei tuoi sogni, ma non dimenticare che il cavallo ha bisogno di terra."
-}, {
-  id: "cuqu",
-  name: "Queen of Cups",
-  up: "Compassion, Intuition, Empathy, Calmness, Emotional security",
-  rev: "Insecurity, Dependency, Martyrdom, Self-centered, Coldness",
-  advice: "Sei lo specchio in cui gli altri si vedono. Non lasciare che il loro fango intorbidi la tua acqua."
-}, {
-  id: "cuki",
-  name: "King of Cups",
-  up: "Control, Balance, Compassion, Emotional maturity, Wisdom",
-  rev: "Manipulation, Volatility, Emotional instability, Coldness, Moodiness",
-  advice: "Il re doma l'oceano dentro di sé. Sii calmo fuori, anche se sotto infuria l'abisso."
-},
+        {
+          id: "cuac",
+          name: "Ace of Cups",
+          up: "Love, New feelings, Intuition, Spiritual blessing, Creativity",
+          rev: "Empty emotions, Blocked creativity, Repression, Unrequited love",
+          advice: "Il cuore è un calice: lascialo traboccare, ma non affogare nei sentimenti altrui."
+        }, {
+          id: "cu02",
+          name: "Two of Cups",
+          up: "Partnership, Attraction, Mutual respect, Connection, Union",
+          rev: "Break-up, Disharmony, Distrust, Imbalance, Misalignment",
+          advice: "Due anime che si specchiano creano una verità nuova. Proteggi questo riflesso."
+        }, {
+          id: "cu03",
+          name: "Three of Cups",
+          up: "Celebration, Friendship, Community, Happiness, Collaboration",
+          rev: "Overindulgence, Gossip, Isolation, Group conflict, Excess",
+          advice: "Brinda con chi ha camminato con te nel buio, ma attento a non scordare la strada."
+        }, {
+          id: "cu04",
+          name: "Four of Cups",
+          up: "Apathy, Contemplation, Reevaluation, Disconnected, Boredom",
+          rev: "Awareness, New interest, Choosing to act, Retreating from isolation",
+          advice: "Smetti di fissare il calice vuoto; c'è una mano tesa nell'ombra che ti offre di meglio."
+        }, {
+          id: "cu05",
+          name: "Five of Cups",
+          up: "Loss, Regret, Disappointment, Mourning, Focusing on the negative",
+          rev: "Moving on, Acceptance, Finding peace, Moving through grief",
+          advice: "Tre coppe sono a terra, ma due sono ancora piene. Non piangere sul sangue versato."
+        }, {
+          id: "cu06",
+          name: "Six of Cups",
+          up: "Nostalgia, Childhood, Innocence, Reunion, Sweet memories",
+          rev: "Living in the past, Moving forward, Leaving home, Childhood issues",
+          advice: "Il passato è un profumo dolce, ma se lo respiri troppo a lungo diventa un veleno."
+        }, {
+          id: "cu07",
+          name: "Seven of Cups",
+          up: "Choices, Fantasy, Illusion, Wishful thinking, Opportunities",
+          rev: "Alignment, Reality, Overwhelmed by choice, Clarity, Resolution",
+          advice: "Mille sogni brillano nella nebbia. Solo uno ha radici, gli altri sono solo spettri."
+        }, {
+          id: "cu08",
+          name: "Eight of Cups",
+          up: "Abandonment, Travel, Seeking truth, Walking away, Disillusionment",
+          rev: "Fear of change, Staying in a bad situation, Aimlessness, Drift",
+          advice: "A volte l'unico modo per salvarsi è voltare le spalle a ciò che hai costruito."
+        }, {
+          id: "cu09",
+          name: "Nine of Cups",
+          up: "Satisfaction, Wishes, Contentment, Success, Emotional stability",
+          rev: "Greed, Materialism, Overindulgence, Smugness, Dissatisfaction",
+          advice: "Hai ciò che volevi. Ora chiediti: è il tuo cuore ad essere pieno o solo il tuo stomaco?"
+        }, {
+          id: "cu10",
+          name: "Ten of Cups",
+          up: "Harmony, Family, Bliss, Long-term happiness, Emotional fulfilment",
+          rev: "Broken home, Disharmony, Struggling relationships, Misalignment of values",
+          advice: "La vera pace non è l'assenza di tempesta, ma avere un rifugio sicuro dove attenderla."
+        }, {
+          id: "cupa",
+          name: "Page of Cups",
+          up: "Creativity, News, Intuition, Curiosity, Emotional possibilities",
+          rev: "Emotional immaturity, Creative block, Doubts, Escapism",
+          advice: "Un messaggio galleggia verso di te. Ascolta ciò che dicono le onde, non la riva."
+        }, {
+          id: "cukn",
+          name: "Knight of Cups",
+          up: "Romance, Charm, Imagination, Following the heart, Proposals",
+          rev: "Moodiness, Unrealistic, Heartbreak, Disappointment, Overactive imagination",
+          advice: "Cavalca sull'acqua dei tuoi sogni, ma non dimenticare che il cavallo ha bisogno di terra."
+        }, {
+          id: "cuqu",
+          name: "Queen of Cups",
+          up: "Compassion, Intuition, Empathy, Calmness, Emotional security",
+          rev: "Insecurity, Dependency, Martyrdom, Self-centered, Coldness",
+          advice: "Sei lo specchio in cui gli altri si vedono. Non lasciare che il loro fango intorbidi la tua acqua."
+        }, {
+          id: "cuki",
+          name: "King of Cups",
+          up: "Control, Balance, Compassion, Emotional maturity, Wisdom",
+          rev: "Manipulation, Volatility, Emotional instability, Coldness, Moodiness",
+          advice: "Il re doma l'oceano dentro di sé. Sii calmo fuori, anche se sotto infuria l'abisso."
+        },
         // SEME DI DENARI
         // SEME DI DENARI - AGGIORNATI
-{
-  id: "peac",
-  name: "Ace of Pentacles",
-  up: "Prosperity, Opportunity, New Venture, Abundance, Manifestation",
-  rev: "Lost opportunity, Financial risks, Lack of planning, Greed, Instability",
-  advice: "Un seme d'oro è caduto nel tuo giardino. Interralo ora se vuoi un albero domani."
-}, {
-  id: "pe02",
-  name: "Two of Pentacles",
-  up: "Balance, Adaptability, Priorities, Time management, Multi-tasking",
-  rev: "Disorganization, Overwhelmed, Financial stress, Imbalance, Messiness",
-  advice: "Danza con le tue responsabilità, ma non lasciare che siano loro a guidare il ballo."
-}, {
-  id: "pe03",
-  name: "Three of Pentacles",
-  up: "Teamwork, Mastery, Collaboration, Learning, Building, Skill",
-  rev: "Lack of coordination, Poor workmanship, Competition, Disharmony",
-  advice: "Nessuna cattedrale è stata costruita da un solo uomo. Unisci il tuo talento ad altri."
-}, {
-  id: "pe04",
-  name: "Four of Pentacles",
-  up: "Security, Conservation, Frugality, Boundaries, Stability",
-  rev: "Greed, Possessiveness, Stinginess, Resistance to change, Blockage",
-  advice: "Stringi troppo forte le tue monete e non potrai usare le mani per fare nient'altro."
-}, {
-  id: "pe05",
-  name: "Five of Pentacles",
-  up: "Hardship, Isolation, Financial loss, Poverty, Worry",
-  rev: "Recovery, Spiritual growth, End of hardship, Finding help, Resilience",
-  advice: "C'è una finestra illuminata proprio accanto a te. Alza lo sguardo dalla neve."
-}, {
-  id: "pe06",
-  name: "Six of Pentacles",
-  up: "Generosity, Sharing, Charity, Giving and Receiving, Fairness",
-  rev: "Strings attached, Power dynamics, Debt, Selfishness, Inequality",
-  advice: "Sii la mano che dà o la mano che riceve, ma fallo senza che l'orgoglio sporchi il gesto."
-}, {
-  id: "pe07",
-  name: "Seven of Pentacles",
-  up: "Patience, Reward, Investment, Long-term view, Sustainable results",
-  rev: "Lack of reward, Impatience, Poor investment, Boredom, Frustration",
-  advice: "I frutti stanno maturando. Non strapparli dal ramo solo perché hai fame oggi."
-}, {
-  id: "pe08",
-  name: "Eight of Pentacles",
-  up: "Diligence, Craftsmanship, Skill development, Hard work, Mastery",
-  rev: "Perfectionism, Misdirected activity, Laziness, Lack of focus, Drudgery",
-  advice: "La maestria è la ripetizione di un gesto fatta con amore. Continua a battere il martello."
-}, {
-  id: "pe09",
-  name: "Nine of Pentacles",
-  up: "Independence, Luxury, Self-sufficiency, Financial security, Abundance",
-  rev: "Over-investment, Living beyond means, Lack of independence, Materialism",
-  advice: "Goditi il tuo giardino. Hai faticato per recintarlo, ora impara a viverci dentro."
-}, {
-  id: "pe10",
-  name: "Ten of Pentacles",
-  up: "Wealth, Legacy, Family, Tradition, Long-term success, Inheritance",
-  rev: "Financial loss, Family disputes, Instability, Broken traditions, Debt",
-  advice: "Costruisci qualcosa che sopravviva al tuo nome. Le radici profonde non temono l'inverno."
-}, {
-  id: "pepa",
-  name: "Page of Pentacles",
-  up: "Ambition, Study, Consistency, New job, Financial opportunity",
-  rev: "Procrastination, Lack of focus, Irresponsibility, Missed chances",
-  advice: "Un'opportunità pratica bussa alla porta. Non serve filosofia ora, serve pragmatismo."
-}, {
-  id: "pekn",
-  name: "Knight of Pentacles",
-  up: "Method, Persistence, Practicality, Duty, Reliability, Routine",
-  rev: "Stagnation, Boredom, Laziness, Rigidity, Obsessive behavior",
-  advice: "Il passo è lento, ma costante. Arriverai alla meta quando gli altri saranno già esausti."
-}, {
-  id: "pequ",
-  name: "Queen of Pentacles",
-  up: "Nurturing, Security, Practical mother, Down-to-earth, Abundance",
-  rev: "Work-life imbalance, Insecurity, Smothering, Materialistic, Selfish",
-  advice: "Cura il tuo corpo e la tua casa come se fossero templi. La terra ti risponerà."
-}, {
-  id: "peki",
-  name: "King of Pentacles",
-  up: "Abundance, Discipline, Financial King, Security, Leadership",
-  rev: "Greed, Indulgence, Corruption, Stubbornness, Poor judgment",
-  advice: "Il vero successo è saper trasformare il fango in oro con la sola forza della tua disciplina."
-},
+        {
+          id: "peac",
+          name: "Ace of Pentacles",
+          up: "Prosperity, Opportunity, New Venture, Abundance, Manifestation",
+          rev: "Lost opportunity, Financial risks, Lack of planning, Greed, Instability",
+          advice: "Un seme d'oro è caduto nel tuo giardino. Interralo ora se vuoi un albero domani."
+        }, {
+          id: "pe02",
+          name: "Two of Pentacles",
+          up: "Balance, Adaptability, Priorities, Time management, Multi-tasking",
+          rev: "Disorganization, Overwhelmed, Financial stress, Imbalance, Messiness",
+          advice: "Danza con le tue responsabilità, ma non lasciare che siano loro a guidare il ballo."
+        }, {
+          id: "pe03",
+          name: "Three of Pentacles",
+          up: "Teamwork, Mastery, Collaboration, Learning, Building, Skill",
+          rev: "Lack of coordination, Poor workmanship, Competition, Disharmony",
+          advice: "Nessuna cattedrale è stata costruita da un solo uomo. Unisci il tuo talento ad altri."
+        }, {
+          id: "pe04",
+          name: "Four of Pentacles",
+          up: "Security, Conservation, Frugality, Boundaries, Stability",
+          rev: "Greed, Possessiveness, Stinginess, Resistance to change, Blockage",
+          advice: "Stringi troppo forte le tue monete e non potrai usare le mani per fare nient'altro."
+        }, {
+          id: "pe05",
+          name: "Five of Pentacles",
+          up: "Hardship, Isolation, Financial loss, Poverty, Worry",
+          rev: "Recovery, Spiritual growth, End of hardship, Finding help, Resilience",
+          advice: "C'è una finestra illuminata proprio accanto a te. Alza lo sguardo dalla neve."
+        }, {
+          id: "pe06",
+          name: "Six of Pentacles",
+          up: "Generosity, Sharing, Charity, Giving and Receiving, Fairness",
+          rev: "Strings attached, Power dynamics, Debt, Selfishness, Inequality",
+          advice: "Sii la mano che dà o la mano che riceve, ma fallo senza che l'orgoglio sporchi il gesto."
+        }, {
+          id: "pe07",
+          name: "Seven of Pentacles",
+          up: "Patience, Reward, Investment, Long-term view, Sustainable results",
+          rev: "Lack of reward, Impatience, Poor investment, Boredom, Frustration",
+          advice: "I frutti stanno maturando. Non strapparli dal ramo solo perché hai fame oggi."
+        }, {
+          id: "pe08",
+          name: "Eight of Pentacles",
+          up: "Diligence, Craftsmanship, Skill development, Hard work, Mastery",
+          rev: "Perfectionism, Misdirected activity, Laziness, Lack of focus, Drudgery",
+          advice: "La maestria è la ripetizione di un gesto fatta con amore. Continua a battere il martello."
+        }, {
+          id: "pe09",
+          name: "Nine of Pentacles",
+          up: "Independence, Luxury, Self-sufficiency, Financial security, Abundance",
+          rev: "Over-investment, Living beyond means, Lack of independence, Materialism",
+          advice: "Goditi il tuo giardino. Hai faticato per recintarlo, ora impara a viverci dentro."
+        }, {
+          id: "pe10",
+          name: "Ten of Pentacles",
+          up: "Wealth, Legacy, Family, Tradition, Long-term success, Inheritance",
+          rev: "Financial loss, Family disputes, Instability, Broken traditions, Debt",
+          advice: "Costruisci qualcosa che sopravviva al tuo nome. Le radici profonde non temono l'inverno."
+        }, {
+          id: "pepa",
+          name: "Page of Pentacles",
+          up: "Ambition, Study, Consistency, New job, Financial opportunity",
+          rev: "Procrastination, Lack of focus, Irresponsibility, Missed chances",
+          advice: "Un'opportunità pratica bussa alla porta. Non serve filosofia ora, serve pragmatismo."
+        }, {
+          id: "pekn",
+          name: "Knight of Pentacles",
+          up: "Method, Persistence, Practicality, Duty, Reliability, Routine",
+          rev: "Stagnation, Boredom, Laziness, Rigidity, Obsessive behavior",
+          advice: "Il passo è lento, ma costante. Arriverai alla meta quando gli altri saranno già esausti."
+        }, {
+          id: "pequ",
+          name: "Queen of Pentacles",
+          up: "Nurturing, Security, Practical mother, Down-to-earth, Abundance",
+          rev: "Work-life imbalance, Insecurity, Smothering, Materialistic, Selfish",
+          advice: "Cura il tuo corpo e la tua casa come se fossero templi. La terra ti risponerà."
+        }, {
+          id: "peki",
+          name: "King of Pentacles",
+          up: "Abundance, Discipline, Financial King, Security, Leadership",
+          rev: "Greed, Indulgence, Corruption, Stubbornness, Poor judgment",
+          advice: "Il vero successo è saper trasformare il fango in oro con la sola forza della tua disciplina."
+        },
       ];
-
       // Funzione per generare il link immagine corretto
-function getCardImageUrl(id) {
-    // Se hai rinominato gli ID in swac, swpa, ecc...
-    // Il link ora sarà semplicemente diretto
-    return `https://www.sacred-texts.com/tarot/pkt/img/${id}.jpg`;
-}
+      function getCardImageUrl(id) {
+        // Se hai rinominato gli ID in swac, swpa, ecc...
+        // Il link ora sarà semplicemente diretto
+        return `https://www.sacred-texts.com/tarot/pkt/img/${id}.jpg`;
+      }
 
-function displayCards(cards) {
-    const grid = document.getElementById('cardGrid');
-    grid.innerHTML = '';
-    cards.forEach(card => {
-        const div = document.createElement('div');
-        div.className = 'card-item';
-        div.onclick = () => openModal(card);
-        
-        const imgUrl = getCardImageUrl(card.id);
-
-        div.innerHTML = `
-            <img src="${imgUrl}" 
+      function displayCards(cards) {
+        const grid = document.getElementById('cardGrid');
+        grid.innerHTML = '';
+        cards.forEach(card => {
+          const div = document.createElement('div');
+          div.className = 'card-item';
+          div.onclick = () => openModal(card);
+          const imgUrl = getCardImageUrl(card.id);
+          div.innerHTML = `
+            
+												<img src="${imgUrl}" 
                  alt="${card.name}" 
                  onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/d/db/Tarot_back.jpg';">
-            <div class="card-label">${card.name}</div>
+													<div class="card-label">${card.name}</div>
         `;
-        grid.appendChild(div);
-    });
-}
+          grid.appendChild(div);
+        });
+      }
 
-function openModal(card) {
-    const modalImg = document.getElementById('modalImg');
-    const imgUrl = getCardImageUrl(card.id);
-    
-    // Reset immagine e caricamento
-    modalImg.src = imgUrl;
-    modalImg.onerror = function() {
-        this.src = 'https://upload.wikimedia.org/wikipedia/commons/d/db/Tarot_back.jpg'; // Dorso della carta se il link è rotto
-    };
-
-    document.getElementById('modalTitle').innerText = card.name;
-    document.getElementById('uprightText').innerText = card.up;
-    document.getElementById('reversedText').innerText = card.rev;
-    document.getElementById('adviceText').innerText = card.advice;
-    document.getElementById('cardModal').style.display = 'flex';
-}
+      function openModal(card) {
+        const modalImg = document.getElementById('modalImg');
+        const imgUrl = getCardImageUrl(card.id);
+        // Reset immagine e caricamento
+        modalImg.src = imgUrl;
+        modalImg.onerror = function() {
+          this.src = 'https://upload.wikimedia.org/wikipedia/commons/d/db/Tarot_back.jpg'; // Dorso della carta se il link è rotto
+        };
+        document.getElementById('modalTitle').innerText = card.name;
+        document.getElementById('uprightText').innerText = card.up;
+        document.getElementById('reversedText').innerText = card.rev;
+        document.getElementById('adviceText').innerText = card.advice;
+        document.getElementById('cardModal').style.display = 'flex';
+      }
 
       function closeModal() {
         document.getElementById('cardModal').style.display = 'none';
